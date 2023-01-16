@@ -61,7 +61,7 @@ const Login = () => {
             利用規約に同意します
           </label>
         </div>
-        <button class="btn btn-primary" onClick={() => navigate('/test', { state: { test: inputid } })} disabled={passError || isChecked}>回答ページにうつる</button>
+        <button class="btn btn-primary" onClick={() => navigate('/test', { state: { id: inputid } })} disabled={passError || isChecked}>回答ページにうつる</button>
       </li>
       
     </>
