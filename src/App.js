@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route }  from 'react-router-dom';
 import Login from "./Login";
-import Mypage from "./Mypage";
-
+import Test from "./Test";
 
 const App = () => {
   return (
@@ -10,8 +9,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path={`/`} element={<Login />} />
-          <Route path={`/Mypage/`} element={<Mypage />} />
-          
+          <Route path={`/test/`} element={<Test />} />
         </Routes>
       </BrowserRouter>
     </div>

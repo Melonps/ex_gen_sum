@@ -10,6 +10,9 @@ import "./App.css";
 import { useLocation } from "react-router-dom";
 
 import About from "./components/About"
+import Addread from "./components/Addread"
+import Read from "./components/Read"
+import Question from "./components/Question"
 
 
 const Mypage = (props) => {
@@ -26,8 +29,8 @@ const Mypage = (props) => {
       const userdata = collection(db, "users")
       const q = query(userdata,  where("id", "==", id_for_q));
       getDocs(q).then((snapShot) => {
-        // console.log(snapShot.docs);
         setUsers(snapShot.docs.map((doc) => ({ ...doc.data() })));
+        
       });
     
   }, []);
@@ -63,9 +66,23 @@ const Mypage = (props) => {
         ))}
         </div>
       <div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+        <label class="form-check-label" for="flexRadioDefault1">
+          Default radio
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked/>
+        <label class="form-check-label" for="flexRadioDefault2">
+          Default checked radio
+        </label>
+      </div>
         {JSON.stringify(location.state)}
       </div>
-
+      <Addread id={"4"} />
+      <Read />
+      <Question array={[2, 1]} />
     </div>
   );
 };
