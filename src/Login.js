@@ -3,14 +3,14 @@ import React, { useState } from 'react';
 import {
   useNavigate
 } from "react-router-dom";
-
+import Signin from './components/Signin';
 
 
 const Login = () => {
   /* ↓state変数を定義 */
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [inputid, setId] = useState("");
-  const [pass, setPass] = useState('')
+  const [pass, setPass] = useState('');
   const [passError, setPassError] = useState(true)
   const [isChecked, setIsChecked] = useState(true)
 
@@ -62,6 +62,7 @@ const Login = () => {
           </label>
         </div>
         <button class="btn btn-primary" onClick={() => navigate('/test', { state: { id: inputid } })} disabled={passError || isChecked}>回答ページにうつる</button>
+        <Signin/>
       </li>
       
     </>
